@@ -2,7 +2,6 @@ module DMS
   require 'httparty'
   require 'openssl'
   require 'base64'
-  require 'cgi'
   
   autoload :Node, 'dms/node'
   
