@@ -6,6 +6,7 @@ module DMS
   autoload :Connection,     'dms/connection'
   autoload :Resource,       'dms/resource'
   autoload :Document,       'dms/document'
+  autoload :Table,          'dms/table'
   
   class << self
     
@@ -19,11 +20,12 @@ module DMS
     
     def get(slug)
       resource, *path = slug.split("/")
+      path = path.join("/")
       case resource
       when "documents"
-        DMS::Document.find(resource.join("/"))
+        DMS::Document.find(path)
       when "tables"
-        DMS::Table.find(resource.join("/"))
+        DMS::Table.find(path)
       else
         nil
       end
