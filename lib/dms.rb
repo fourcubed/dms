@@ -17,5 +17,16 @@ module DMS
       }
     end
     
+    def get(slug)
+      resource, *path = slug.split("/")
+      case resource
+      when "documents"
+        DMS::Document.find(resource.join("/"))
+      when "tables"
+        DMS::Table.find(resource.join("/"))
+      else
+        nil
+      end
+    end
   end
 end
