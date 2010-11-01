@@ -14,9 +14,9 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "dms"
   
-  s.add_dependency("activeresource", "~> 2.3.5")
+  s.add_dependency("httparty", ">= 0.6.1")
   
-  s.add_development_dependency("bundler", ">= 1.0.0")
+  s.add_development_dependency("bundler", ">= 1.0.3")
 
   s.files         = `git ls-files`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
