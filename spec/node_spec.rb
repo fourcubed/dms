@@ -44,5 +44,10 @@ describe DMS::Node do
         lambda { DMS::Node.find('') }.should raise_error("slug can't be blank!")
       end
     end
+    
+    it "calls .slug_to_path with the slug" do
+      DMS::Node.should_receive(:slug_to_path).with("documents/1-foobar").and_return("/documents/1-foobar.xml")
+      DMS::Node.find("documents/1-foobar")
+    end
   end
 end
