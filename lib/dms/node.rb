@@ -13,11 +13,12 @@ module DMS
         Base64.encode64(signature).chomp 
       end
       
-      def get(path, options = {})
+      def find(slug)
+        path = "/" + slug.to_s ".xml"
         timestamp = Time.now.to_i.to_s
         signature = CGI::escape(generate_signature(:get, path, timestamp))
         default_params :timestamp => timestamp, :signature => signature
-        super(path, options)
+        get(path)
       end
     end
   end
