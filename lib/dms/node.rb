@@ -14,6 +14,8 @@ module DMS
       end
       
       def find(slug)
+        raise "slug can't be blank!" if slug.blank?
+        
         path      = slug_to_path(slug)
         timestamp = Time.now.to_i.to_s
         signature = generate_signature(:get, path, timestamp)
@@ -21,7 +23,7 @@ module DMS
       end
       
       def slug_to_path(slug)
-        File.join("/", slug) + ".xml"
+        File.join("/", slug.to_s) + ".xml"
       end
     end
   end
