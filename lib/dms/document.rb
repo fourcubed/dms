@@ -1,6 +1,4 @@
 module DMS
-  module API
-    class Document < DMS::API::Resource
-    end
+  class Document < DMS::Resource
   end
 end
