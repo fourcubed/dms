@@ -6,7 +6,7 @@ A Ruby Gem to access FourCubed Data Management System REST API.
 
 * HTTParty[http://github.com/jnunemaker/httparty]
 
-= Usage Example
+== Usage Example
 
   require 'rubygems'
   require 'dms'
