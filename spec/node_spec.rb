@@ -16,17 +16,17 @@ describe DMS::Node do
       
       it "sets the @name value correct" do
         @node = DMS::Node.new(@response)
-        @node.name == "Foobar"
+        @node.name.should == "Foobar"
       end
       
       it "sets the @type value correct" do
         @node = DMS::Node.new(@response)
-        @node.type == "Document"
+        @node.type.should == "Document"
       end
       
       it "sets the @text value correct" do
         @node = DMS::Node.new(@response)
-        @node.text == "This is the body"
+        @node.text.should == "This is the body"
       end
     end
   end

@@ -8,9 +8,9 @@ module DMS
     def initialize(response)
       @response = response
       @name = @response.parsed_response.values.first["name"]
-      @type = @response.parsed_response.values.first[:type]
-      @text = @response.parsed_response.values.first[:text]
-      @html = @response.parsed_response.values.first[:html]
+      @type = @response.parsed_response.values.first["type"]
+      @text = @response.parsed_response.values.first["body"]
+      @html = @response.parsed_response.values.first["body"]
     end
   end
   
