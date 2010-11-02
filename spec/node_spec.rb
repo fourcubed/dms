@@ -1,0 +1,33 @@
+require 'spec_helper'
+
+describe DMS::Node do
+  let(:responses) { YAML::load(File.open(File.join(File.dirname(__FILE__), 'fixtures', 'responses.yml'))) }
+  
+  before(:each) do
+    stub_request(:get, /dms\.fourcubed\.com/).to_return(responses[200])
+    @api = DMS::API.new("123456token", "123456key")
+  end
+  
+  describe "#initialize" do
+    context "when a valid HTTParty::Response instance is passed" do
+      before(:each) do
+        @response = @api.send(:perform_request, "documents/1-foobar")
+      end
+      
+      it "sets the @name value correct" do
+        @node = DMS::Node.new(@response)
+        @node.name == "Foobar"
+      end
+      
+      it "sets the @type value correct" do
+        @node = DMS::Node.new(@response)
+        @node.type == "Document"
+      end
+      
+      it "sets the @text value correct" do
+        @node = DMS::Node.new(@response)
+        @node.text == "This is the body"
+      end
+    end
+  end
+end

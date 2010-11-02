@@ -5,12 +5,13 @@ module DMS
     attr_reader :text
     attr_reader :html
     
-    def initialize(hash)
-      hash = hash.values.first
-      @name = hash[:name]
-      @type = hash[:type]
-      @text = hash[:body]
-      @html = hash[:body]
+    def initialize(response)
+      @response = response
+      @name = @response.parsed_response.values.first["name"]
+      @type = @response.parsed_response.values.first[:type]
+      @text = @response.parsed_response.values.first[:text]
+      @html = @response.parsed_response.values.first[:html]
     end
   end
+  
 end

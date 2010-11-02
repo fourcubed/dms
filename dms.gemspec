@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   
   s.add_development_dependency("bundler", ">= 1.0.3")
   s.add_development_dependency("rspec", "1.3.1")
+  s.add_development_dependency("webmock", "1.5.0")
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

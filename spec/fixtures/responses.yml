@@ -1,0 +1,62 @@
+200: |
+  HTTP/1.1 200 OK
+  Content-Type: application/xml; charset=utf-8
+  Transfer-Encoding: chunked
+  Connection: keep-alive
+  Status: 200
+  X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 2.2.10
+  ETag: "5c7e90c6c325b5546c28ea8f9ac510ab"
+  X-UA-Compatible: IE=Edge,chrome=1
+  X-Runtime: 0.009064
+  Cache-Control: max-age=0, private, must-revalidate
+  Server: nginx/0.6.35 + Phusion Passenger 2.2.10 (mod_rails/mod_rack)
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <document>
+    <name>Foobar</name>
+    <body nil="true">This is the body</body>
+    <id type="integer">1</id>
+    <type>Document</type>
+  </document>
+
+401: |
+  HTTP/1.1 401 Unauthorized
+  Content-Type: text/plain; charset=utf-8
+  Transfer-Encoding: chunked
+  Connection: keep-alive
+  Status: 401
+  X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 2.2.10
+  X-UA-Compatible: IE=Edge,chrome=1
+  X-Runtime: 0.004468
+  Cache-Control: no-cache
+  Server: nginx/0.6.35 + Phusion Passenger 2.2.10 (mod_rails/mod_rack)
+
+  Invalid Signature
+  
+404: |
+  HTTP/1.1 404 Not Found
+  Content-Type: text/html; charset=utf-8
+  Transfer-Encoding: chunked
+  Connection: keep-alive
+  Status: 404
+  X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 2.2.10
+  X-UA-Compatible: IE=Edge,chrome=1
+  X-Runtime: 0.008075
+  Cache-Control: no-cache
+  Server: nginx/0.6.35 + Phusion Passenger 2.2.10 (mod_rails/mod_rack)
+
+  Couldn't find Document with ID: 999-Foobar
+
+500: |
+  HTTP/1.1 500 Internal Server Error
+  Content-Type: text/html; charset=utf-8
+  Transfer-Encoding: chunked
+  Connection: keep-alive
+  Status: 500
+  X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 2.2.10
+  X-UA-Compatible: IE=Edge,chrome=1
+  X-Runtime: 0.008075
+  Cache-Control: no-cache
+  Server: nginx/0.6.35 + Phusion Passenger 2.2.10 (mod_rails/mod_rack)
+
+  Server is not responding!

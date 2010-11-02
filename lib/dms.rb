@@ -6,5 +6,7 @@ module DMS
   autoload :API, 'dms/api'
   autoload :Node, 'dms/node'
   
-  class RecordNotFound < RuntimeError; end
+  class ResourceNotFound < RuntimeError; end
+  class AuthenticationError < RuntimeError; end
+  class UnknownError < RuntimeError; end
 end
