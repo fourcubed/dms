@@ -1,0 +1,28 @@
+= DMS
+
+A Ruby Gem to access FourCubed Data Management System REST API.
+
+== Dependencies
+
+* HTTParty[http://github.com/jnunemaker/httparty]
+
+= Usage Example
+
+  require 'rubygems'
+  require 'dms'
+  
+  api_token = "123456token"
+  api_access_key = "12345accesskey"
+  api = DMS::API.new(api_token, api_access_key)
+
+  doc = api.get("documents/1-title")
+  doc.text
+  => "Document body"
+  doc.html
+  => "<p>Document body</p>"
+  doc.name
+  => "Title"
+
+== Authors
+
+* {Jose Fernandez}[http://github.com/jfernandez]

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe DMS::Node do
-  let(:responses) { YAML::load(File.open(File.join(File.dirname(__FILE__), 'fixtures', 'responses.yml'))) }
+  let(:responses) { YAML::load(file_fixture("responses.yml")) }
   
   before(:each) do
     stub_request(:get, /dms\.fourcubed\.com/).to_return(responses[200])
