@@ -13,11 +13,15 @@ module DMS
         Base64.encode64(signature).chomp 
       end
       
+      def generate_timestamp
+        Time.now.to_i.to_s
+      end
+      
       def find(slug)
         raise "slug can't be blank!" if slug.blank?
         
         path      = slug_to_path(slug)
-        timestamp = Time.now.to_i.to_s
+        timestamp = generate_timestamp
         signature = generate_signature(:get, path, timestamp)
         get(path, :query => { :timestamp => timestamp, :signature => signature }).parsed_response
       end
