@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dms (0.0.1)
+    dms (0.0.2)
       httparty (>= 0.6.1)
 
 GEM

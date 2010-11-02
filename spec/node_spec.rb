@@ -28,6 +28,11 @@ describe DMS::Node do
         @node = DMS::Node.new(@response)
         @node.text.should == "This is the body"
       end
+      
+      it "sets the @html value correct" do
+        @node = DMS::Node.new(@response)
+        @node.html.should == "<p>This is the body</p>"
+      end
     end
   end
 end

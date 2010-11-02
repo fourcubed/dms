@@ -10,7 +10,7 @@ module DMS
       @name = @response.parsed_response.values.first["name"]
       @type = @response.parsed_response.values.first["type"]
       @text = @response.parsed_response.values.first["body"]
-      @html = @response.parsed_response.values.first["body"]
+      @html = @response.parsed_response.values.first["html"]
     end
   end
   

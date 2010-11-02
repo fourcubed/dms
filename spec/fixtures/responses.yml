@@ -17,6 +17,7 @@
     <body nil="true">This is the body</body>
     <id type="integer">1</id>
     <type>Document</type>
+    <html>&lt;p&gt;This is the body&lt;/p&gt;</html>
   </document>
 
 401: |
