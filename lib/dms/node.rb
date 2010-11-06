@@ -4,13 +4,16 @@ module DMS
     attr_reader :type
     attr_reader :text
     attr_reader :html
+    attr_reader :expires_on
     
     def initialize(response)
       @response = response
-      @name = @response.parsed_response.values.first["name"]
-      @type = @response.parsed_response.values.first["type"]
-      @text = @response.parsed_response.values.first["body"]
-      @html = @response.parsed_response.values.first["html"]
+      hash = @response.parsed_response.values.first
+      @name = hash["name"]
+      @type = hash["type"]
+      @text = hash["body"]
+      @html = hash["html"]
+      @expires_on = Date.parse(hash["expires_on"]) rescue nil
     end
   end
   

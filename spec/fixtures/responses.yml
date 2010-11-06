@@ -15,6 +15,30 @@
   <document>
     <name>Foobar</name>
     <body nil="true">This is the body</body>
+    <expires-on>2010-01-01</expires-on>
+    <id type="integer">1</id>
+    <type>Document</type>
+    <html>&lt;p&gt;This is the body&lt;/p&gt;</html>
+  </document>
+
+200_no_expiration: |
+  HTTP/1.1 200 OK
+  Content-Type: application/xml; charset=utf-8
+  Transfer-Encoding: chunked
+  Connection: keep-alive
+  Status: 200
+  X-Powered-By: Phusion Passenger (mod_rails/mod_rack) 2.2.10
+  ETag: "5c7e90c6c325b5546c28ea8f9ac510ab"
+  X-UA-Compatible: IE=Edge,chrome=1
+  X-Runtime: 0.009064
+  Cache-Control: max-age=0, private, must-revalidate
+  Server: nginx/0.6.35 + Phusion Passenger 2.2.10 (mod_rails/mod_rack)
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <document>
+    <name>Foobar</name>
+    <body nil="true">This is the body</body>
+    <expires-on></expires-on>
     <id type="integer">1</id>
     <type>Document</type>
     <html>&lt;p&gt;This is the body&lt;/p&gt;</html>

@@ -33,6 +33,23 @@ describe DMS::Node do
         @node = DMS::Node.new(@response)
         @node.html.should == "<p>This is the body</p>"
       end
+      
+      it "sets the @expires_on value correct" do
+        @node = DMS::Node.new(@response)
+        @node.expires_on.should == Date.parse("2010/01/01")
+      end
+    end
+    
+    context "when a valid HTTParty::Response instance is passed wich doesn't have an expires_on value" do
+      before(:each) do
+        stub_request(:get, /dms\.fourcubed\.com/).to_return(responses["200_no_expiration"])
+        @response = @api.send(:perform_request, "documents/1-foobar")
+      end
+      
+      it "sets the @expires_on to nil" do
+        @node = DMS::Node.new(@response)
+        @node.expires_on.should be_nil
+      end
     end
   end
 end
