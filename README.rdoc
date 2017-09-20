@@ -1,4 +1,4 @@
-## REPO IS OBSOLUTE - 09/19/17
+= REPO IS OBSOLUTE - 09/19/17
 = DMS
 
 A Ruby Gem to access FourCubed Data Management System REST API.
